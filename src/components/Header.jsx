@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '../styles/Header.css';
-import cvPDF from '../assets/CV_ProfesionalCorregido.pdf'; // Asegúrate de tener tu archivo CV.pdf en assets
+import cvPDF from '../assets/CV_Profesional.pdf'; // Asegúrate de tener tu archivo CV.pdf en assets
 const Header = ({ toggleDesign }) => {
   const [scrolled, setScrolled] = useState(false);
   const [inView, setInView] = useState(false);
