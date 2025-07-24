@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portafolio_lg/static/css/main.4f506afa.css",
-    "main.js": "/portafolio_lg/static/js/main.6a961fe4.js",
+    "main.css": "/portafolio_lg/static/css/main.1aa86d77.css",
+    "main.js": "/portafolio_lg/static/js/main.ea5a48ea.js",
     "static/media/bgPage.jpeg": "/portafolio_lg/static/media/bgPage.9cad4463b8f9e0081f57.jpeg",
     "static/media/DataCertificado.pdf": "/portafolio_lg/static/media/DataCertificado.6da00a71fa5d7a4e3040.pdf",
     "static/media/doccare.png": "/portafolio_lg/static/media/doccare.8b92a087cfa1ba266213.png",
@@ -16,11 +16,11 @@
     "static/media/utec.png": "/portafolio_lg/static/media/utec.c626b2cb0456ddb60183.png",
     "static/media/PostamanAPI.png": "/portafolio_lg/static/media/PostamanAPI.b492750aa94f7f88fbe6.png",
     "index.html": "/portafolio_lg/index.html",
-    "main.4f506afa.css.map": "/portafolio_lg/static/css/main.4f506afa.css.map",
-    "main.6a961fe4.js.map": "/portafolio_lg/static/js/main.6a961fe4.js.map"
+    "main.1aa86d77.css.map": "/portafolio_lg/static/css/main.1aa86d77.css.map",
+    "main.ea5a48ea.js.map": "/portafolio_lg/static/js/main.ea5a48ea.js.map"
   },
   "entrypoints": [
-    "static/css/main.4f506afa.css",
-    "static/js/main.6a961fe4.js"
+    "static/css/main.1aa86d77.css",
+    "static/js/main.ea5a48ea.js"
   ]
 }
