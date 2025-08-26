@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/Portafolio_Profesional/static/css/main.49010249.css",
+    "main.js": "/Portafolio_Profesional/static/js/main.6cad794b.js",
+    "static/media/bgPage.jpeg": "/Portafolio_Profesional/static/media/bgPage.9cad4463b8f9e0081f57.jpeg",
+    "static/media/DataCertificado.pdf": "/Portafolio_Profesional/static/media/DataCertificado.6da00a71fa5d7a4e3040.pdf",
+    "static/media/doccare.png": "/Portafolio_Profesional/static/media/doccare.8b92a087cfa1ba266213.png",
+    "static/media/EconomiaCertificado.pdf": "/Portafolio_Profesional/static/media/EconomiaCertificado.ccdd41d4675e6a0d7505.pdf",
+    "static/media/titor.png": "/Portafolio_Profesional/static/media/titor.3a5ccf79cbc92854003d.png",
+    "static/media/apt.png": "/Portafolio_Profesional/static/media/apt.648eff6c152f4babae7a.png",
+    "static/media/CV_Profesional.pdf": "/Portafolio_Profesional/static/media/CV_Profesional.f39afa7e64cdc2f15a64.pdf",
+    "static/media/SG.jpg": "/Portafolio_Profesional/static/media/SG.4f4dcca75f4e18c5284b.jpg",
+    "static/media/itesm.png": "/Portafolio_Profesional/static/media/itesm.dc106162b19a59eae8f5.png",
+    "static/media/CR.jpeg": "/Portafolio_Profesional/static/media/CR.953c9927efb5b0380a77.jpeg",
+    "static/media/utec.png": "/Portafolio_Profesional/static/media/utec.c626b2cb0456ddb60183.png",
+    "static/media/PostamanAPI.png": "/Portafolio_Profesional/static/media/PostamanAPI.b492750aa94f7f88fbe6.png",
+    "static/media/udv-logo.png": "/Portafolio_Profesional/static/media/udv-logo.9d40117e4290d4b4c828.png",
+    "index.html": "/Portafolio_Profesional/index.html",
+    "main.49010249.css.map": "/Portafolio_Profesional/static/css/main.49010249.css.map",
+    "main.6cad794b.js.map": "/Portafolio_Profesional/static/js/main.6cad794b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.49010249.css",
+    "static/js/main.6cad794b.js"
+  ]
+}
