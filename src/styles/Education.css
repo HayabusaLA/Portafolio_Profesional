@@ -1,0 +1,138 @@
+:root{
+  --bg: #f7f8fb;
+  --surface: #ffffff;
+  --surface-2: #f3f5fa;
+  --text: #101214;
+  --muted: #5b6573;
+  --border: rgba(0,0,0,0.08);
+  --accent: #3b82f6;   /* azul vivo */
+  --accent-2: #06b6d4; /* cyan sobrio */
+  --radius: 16px;
+  --shadow: 0 10px 24px rgba(16,18,20,.08);
+}
+
+/* Contenedor */
+.education-container{
+  display:flex; flex-direction:column; gap:20px;
+  padding: 20px;
+  background: var(--bg);
+}
+
+/* Título con subrayado gradiente (consistente) */
+.education-title-section{
+  font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 10px;
+  color: var(--text);
+  position: relative;
+  padding-bottom: 6px;
+}
+.education-title-section::after{
+  content:"";
+  display:block;
+  width: 90px; height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border-radius: 999px;
+  margin: 8px auto 0;
+}
+
+/* Card base */
+.education-card{
+  display:flex; align-items:stretch;
+  background: linear-gradient(180deg, var(--surface), var(--surface-2));
+  border:1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  overflow:hidden;
+  min-height: 220px;
+
+  /* Animación de entrada */
+  opacity:0;
+  transform: translateY(22px) scale(.98);
+  transition: opacity .55s cubic-bezier(.22,1,.36,1), transform .6s cubic-bezier(.22,1,.36,1);
+}
+.education-card.visible{
+  opacity:1;
+  transform: translateY(0) scale(1);
+}
+
+/* Alternar dirección sutil en desktop */
+.education-card.is-odd{ }
+.education-card.is-even{ flex-direction: row-reverse; }
+
+/* Lado izquierdo (imagen + overlay + meta) */
+.education-card-left{
+  position:relative;
+  flex: 0 0 300px;
+  min-height: 200px;
+  isolation:isolate;
+}
+.education-bg{
+  position:absolute; inset:0;
+  background-size: cover; background-position: center;
+  transform: scale(1.02);
+  filter: saturate(1.05);
+}
+.education-overlay{
+  position:absolute; inset:0; z-index:0;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.28), rgba(0,0,0,.15)),
+    linear-gradient(180deg, rgba(0,0,0,.15), transparent 50%);
+}
+.education-meta{
+  position:relative; z-index:1;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; color:#fff; height:100%; padding: 12px;
+}
+.education-year{
+  font-size: .98rem; font-weight: 800;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.25);
+  padding: 6px 10px; border-radius: 999px; margin-bottom: 10px;
+}
+.education-institution{
+  font-size: 1rem; font-weight: 700; line-height:1.3;
+}
+
+/* Lado derecho (contenido) */
+.education-card-right{
+  flex:1; padding: 18px;
+  display:flex; flex-direction:column; justify-content:center;
+}
+.education-title{
+  font-size: 1.1rem; font-weight: 800; color: var(--text);
+  margin: 0 0 8px; position: relative;
+}
+.education-title::after{
+  content:""; position:absolute; left:0; bottom:-6px;
+  width: 56px; height: 2px; border-radius: 999px;
+  background: var(--accent);
+}
+.education-description{
+  margin: 10px 0 0; color: var(--muted); line-height: 1.6;
+  font-size: .97rem;
+}
+
+/* Hover sutil (opcional) */
+.education-card:hover{
+  box-shadow: 0 16px 38px rgba(16,18,20,.12);
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .education-card{ flex-direction: column; }
+  .education-card.is-even{ flex-direction: column; }
+  .education-card-left{ flex: 0 0 180px; }
+  .education-card-right{ padding: 16px; }
+}
+
+/* Accesibilidad: reducir animaciones si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce){
+  .education-card,
+  .education-card.visible{
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}

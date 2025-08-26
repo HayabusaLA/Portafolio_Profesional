@@ -1,0 +1,159 @@
+:root{
+  --bg: #f7f8fb;
+  --surface: #ffffff;
+  --surface-2: #f3f5fa;
+  --text: #101214;
+  --muted: #5b6573;
+  --border: rgba(0,0,0,0.08);
+  --accent: #3b82f6;   /* azul vivo */
+  --accent-2: #06b6d4; /* cyan sobrio */
+  --radius: 16px;
+  --shadow: 0 10px 24px rgba(16,18,20,.08);
+}
+
+.experience-wrapper{ padding: 28px 0; }
+
+/* Título con subrayado consistente */
+.section-title{
+  font-size: clamp(1.8rem, 2.6vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: .2px;
+  margin: 8px 0 22px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 6px;
+}
+.section-title::after{
+  content:"";
+  position:absolute; left:50%; transform:translateX(-50%);
+  bottom: -6px; width:90px; height:4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border-radius: 999px;
+}
+
+/* Contenedor */
+.experience-section{
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1fr;
+  padding: 0 8px;
+}
+@media (min-width: 920px){
+  .experience-section{ gap: 20px; }
+}
+
+/* Tarjeta */
+.experience-card{
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 240px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+
+  /* Animación de entrada */
+  opacity: 0;
+  transform: translateY(24px) scale(.98);
+  transition: opacity .5s cubic-bezier(.22,1,.36,1),
+              transform .6s cubic-bezier(.22,1,.36,1),
+              box-shadow .2s ease, transform .2s ease;
+}
+.experience-card.visible{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.experience-card:hover{
+  box-shadow: 0 16px 38px rgba(16,18,20,.12);
+  transform: translateY(-2px) scale(1.01);
+}
+
+/* Imagen de fondo con overlay para legibilidad */
+.experience-bg{
+  position:absolute; inset:0;
+  background-size: cover; background-position: center;
+  filter: saturate(1.05);
+  transform: scale(1.02);
+}
+.experience-overlay{
+  position:absolute; inset:0;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.28), rgba(0,0,0,.15)),
+    linear-gradient(180deg, rgba(0,0,0,.18), transparent 45%);
+}
+
+/* Pill de fecha al borde izquierdo (en desktop se ve como columna) */
+.experience-date{
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color:#fff;
+  font-weight: 800;
+  padding: 16px 14px;
+  border-radius: 0 12px 12px 0;
+  width: fit-content;
+  margin: 14px;
+  box-shadow: 0 6px 18px rgba(59,130,246,.25);
+}
+
+/* Contenido */
+.experience-content{
+  position: relative;
+  z-index: 1;
+  margin: 14px;
+  margin-top: 8px;
+  background: rgba(255,255,255,.9);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  backdrop-filter: blur(2px);
+}
+.experience-title{
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text);
+  margin: 0 0 6px;
+  position: relative;
+}
+.experience-title::after{
+  content:"";
+  position:absolute; left:0; bottom:-6px;
+  width:56px; height:2px; background: var(--accent);
+  border-radius: 999px;
+}
+.experience-position{
+  margin: 10px 0 10px;
+  color: #34495e; font-weight: 700;
+}
+.experience-description{
+  margin: 0; color: var(--muted); line-height: 1.6;
+}
+
+/* CTA */
+.experience-link{
+  display:inline-block; margin-top: 12px;
+  padding: 10px 14px; border-radius: 12px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color:#fff; font-weight: 800; text-decoration: none;
+  transition: box-shadow .18s ease, transform .12s ease;
+}
+.experience-link:hover{
+  box-shadow: 0 6px 18px rgba(59,130,246,.25);
+  transform: translateY(-1px);
+}
+
+/* Responsive: apilar bloques y mantener legibilidad */
+@media (max-width: 768px){
+  .experience-content{ margin: 12px; padding: 14px; }
+  .experience-date{ margin: 12px; }
+}
+
+/* Accesibilidad: reducir animaciones si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce){
+  .experience-card,
+  .experience-card.visible{
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}

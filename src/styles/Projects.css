@@ -1,0 +1,111 @@
+:root{
+  --bg: #f7f8fb;
+  --surface: #ffffff;
+  --surface-2: #f3f5fa;
+  --text: #101214;
+  --muted: #5b6573;
+  --border: rgba(0,0,0,0.08);
+  --accent: #3b82f6;   /* azul vivo */
+  --accent-2: #06b6d4; /* cyan sobrio */
+  --radius: 16px;
+  --shadow: 0 10px 24px rgba(16,18,20,.08);
+}
+
+.projects-section {
+  padding: 4rem 2rem;
+  background: var(--bg);
+}
+
+.projects-title {
+  font-size: clamp(1.8rem, 2.6vw, 2.3rem);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.projects-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -8px;
+  width: 90px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border-radius: 999px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: linear-gradient(180deg, var(--surface), var(--surface-2));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 34px rgba(16,18,20,.12);
+}
+
+/* Imagen con wrapper para mantener proporción */
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+/* Contenido */
+.project-content {
+  flex: 1;
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+}
+.project-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.project-description {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: auto;
+}
+
+/* Botón */
+.project-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+}
+.project-link:hover {
+  box-shadow: 0 6px 18px rgba(59,130,246,.25);
+  transform: translateY(-1px);
+}
